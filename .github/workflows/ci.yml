@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            target/debug/incremental
+            target/release/incremental
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-
+
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Build
+        run: cargo build --release
+
+      - name: Run PE test suite
+        env:
+          BXEN: target/release/bxen.exe
+        run: |
+          $ErrorActionPreference = 'SilentlyContinue'
+          $failures = @()
+
+          $tests = Get-ChildItem test/*.bxen | Sort-Object Name
+          foreach ($src in $tests) {
+            $name = $src.BaseName
+            $exe  = "test/${name}_pe.exe"
+
+            Write-Host "=== $name ==="
+            & $BXEN $src.FullName $exe --emit pe 2>&1 | Out-Null
+            if (Test-Path $exe) {
+              & $exe
+              $code = $LASTEXITCODE
+              if ($code -ne 0) {
+                Write-Host "FAIL: $name exited with $code"
+                $failures += $name
+              } else {
+                Write-Host "PASS: $name"
+              }
+            } else {
+              Write-Host "FAIL: $name - exe not produced"
+              $failures += $name
+            }
+          }
+
+          if ($failures.Count -gt 0) {
+            Write-Host ""
+            Write-Host "Failures: $($failures -join ', ')"
+            exit 1
+          }
+          Write-Host ""
+          Write-Host "All $($tests.Count) tests passed."
