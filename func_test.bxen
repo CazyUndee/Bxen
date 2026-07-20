@@ -1,0 +1,30 @@
+header {
+    version: 0.1
+}
+
+module main: {
+    // Test function with parameters
+    func add(a: i64, b: i64) -> i64 {
+        result: a + b
+        return result
+    }
+
+    // Test function with multiple statements
+    func factorial(n: i64) -> i64 {
+        if (n <= 1) {
+            return 1
+        } else {
+            return n * factorial(n - 1)
+        }
+    }
+
+    // Main entry point
+    x: add(10, 20)
+    print(x).out
+
+    y: factorial(5)
+    print(y).out
+
+    // Test function call with expressions
+    print(add(1, 2) + add(3, 4)).out
+}

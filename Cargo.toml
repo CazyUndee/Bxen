@@ -1,0 +1,8 @@
+[package]
+name = "bxen"
+version = "0.1.0"
+edition = "2021"
+authors = ["Bxen Contributors"]
+description = "A minimalist, self-bootstrapping postfix stack language for direct x86_64 code generation."
+
+[dependencies]

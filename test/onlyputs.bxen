@@ -1,0 +1,4 @@
+module main: {
+    puts("Hello").out
+    0
+}

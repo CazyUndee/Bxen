@@ -1,0 +1,8 @@
+module main: {
+    print("tab\there").out
+    print("newline\nhere").out
+    print("quote\"here").out
+    print("slash\\here").out
+    print("null\0here").out
+    0
+}

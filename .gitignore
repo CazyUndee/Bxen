@@ -1,0 +1,37 @@
+# Rust
+target/
+Cargo.lock
+
+# Build/test artifacts
+*.exe
+*.dll
+*.pdb
+*.o
+*.rs.bk
+*.asm
+*.bxen.bk
+output.rs
+output.asm
+test_output.txt
+stdout.txt
+
+# PowerShell test scripts (local debug harness)
+test_*.ps1
+diag_*.ps1
+check_*.ps1
+winver.ps1
+test_dirs.ps1
+test_msvcrt.c
+test_crt.exe
+test_crt.pdb
+*.rcgu.*
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+Desktop.ini

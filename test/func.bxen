@@ -1,0 +1,25 @@
+module main: {
+    print("Testing functions and else if:").out
+
+    result: add(3, 4)
+    print(result).out
+
+    print("Even or odd:").out
+    i: 0
+    while (i < 6) {
+        if (i == 0) {
+            print("  zero").out
+        } else if (i % 2 == 0) {
+            print("  even").out
+        } else {
+            print("  odd").out
+        }
+        i: i + 1
+    }
+
+    0
+
+    func add(a: i64, b: i64) -> i64 {
+        return a + b
+    }
+}

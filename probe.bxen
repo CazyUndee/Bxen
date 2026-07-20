@@ -1,0 +1,10 @@
+header {
+    version: 0.1
+}
+
+module main: {
+    a: 7 >> 1
+    print(a).out
+    print(7 - 1).out
+    print(7 >> 1).out
+}

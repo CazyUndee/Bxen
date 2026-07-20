@@ -1,0 +1,4 @@
+module main: {
+    print("Hello, World!").out
+    0
+}

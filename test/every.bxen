@@ -1,0 +1,54 @@
+module main: {
+    print("=== bxen feature test ===").out
+
+    print("--- arithmetic ---").out
+    a: 10 + 20 * 3
+    print(a).out
+    b: 100 - 50 / 5
+    print(b).out
+    c: (1 + 2) * (3 + 4)
+    print(c).out
+
+    print("--- bitwise ops ---").out
+    d: 12 & 7
+    print(d).out
+    e: 12 | 7
+    print(e).out
+    f: ~0
+    print(f).out
+    g: 1 << 4
+    print(g).out
+    h: 256 >> 4
+    print(h).out
+
+    print("--- comparisons ---").out
+    if (10 > 5) { print("10 > 5 true").out }
+    if (3 < 7) { print("3 < 7 true").out }
+    if (5 == 5) { print("5 == 5 true").out }
+    if (5 != 6) { print("5 != 6 true").out }
+    if (4 >= 4) { print("4 >= 4 true").out }
+    if (4 <= 4) { print("4 <= 4 true").out }
+
+    print("--- strings ---").out
+    print("plain string").out
+    msg: "tab\there"
+    print(msg).out
+    msg2: "newline\nhere"
+    print(msg2).out
+
+    print("--- puts & putchar ---").out
+    puts("via puts").out
+    putchar(66).out
+    putchar(10).out
+
+    print("--- functions ---").out
+    res: twice(7)
+    print(res).out
+
+    print("--- all done ---").out
+    0
+
+    func twice(x: i64) -> i64 {
+        return x * 2
+    }
+}

@@ -1,0 +1,4 @@
+module main: {
+    putchar(65).out
+    0
+}

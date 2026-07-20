@@ -1,0 +1,26 @@
+header {
+    version: 0.1
+}
+
+module main: {
+    i: 0
+    n: 10
+    sum: 0
+
+    while (i < n) {
+        sum: sum + i
+        i: i + 1
+    }
+
+    print(sum).out
+
+    if (sum > 50) {
+        print(1).out
+    } else {
+        print(0).out
+    }
+
+    if (sum == 55) {
+        print(2).out
+    }
+}

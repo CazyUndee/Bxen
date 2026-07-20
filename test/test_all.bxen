@@ -1,0 +1,7 @@
+module main: {
+    print("Hello from puts!").out
+    putchar(65).out
+    putchar(10).out
+    print(99).out
+    0
+}

@@ -1,0 +1,9 @@
+module main: {
+    x: twice(7)
+    x
+    0
+
+    func twice(n: i64) -> i64 {
+        n * 2
+    }
+}

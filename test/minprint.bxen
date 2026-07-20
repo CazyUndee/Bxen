@@ -1,0 +1,4 @@
+module main: {
+    print("test").out
+    0
+}

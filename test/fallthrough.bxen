@@ -1,0 +1,10 @@
+module main: {
+    print("function fall-through test:").out
+    x: twice(7)
+    print(x).out
+    0
+
+    func twice(n: i64) -> i64 {
+        n * 2
+    }
+}

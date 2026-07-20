@@ -1,0 +1,44 @@
+header {
+    version: 0.1
+}
+
+module main: {
+    x: 2 + 3
+    result: x
+    print(result).out
+
+    a: 10 - 4
+    b: a * 2
+    print(b).out
+
+    c: b % 7
+    print(c).out
+
+    flag: 5 < a
+    print(flag).out
+
+    print(7 >> 1).out
+    print(!flag).out
+
+    // control flow
+    i: 0
+    n: 10
+    sum: 0
+
+    while (i < n) {
+        sum: sum + i
+        i: i + 1
+    }
+
+    print(sum).out
+
+    if (sum > 50) {
+        print(1).out
+    } else {
+        print(0).out
+    }
+
+    if (sum == 55) {
+        print(2).out
+    }
+}

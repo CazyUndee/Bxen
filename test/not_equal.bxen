@@ -1,0 +1,20 @@
+module main: {
+    print("!= test:").out
+    x: 5
+    y: 10
+    if (x != y) {
+        print("5 != 10 is true").out
+    } else {
+        print("5 != 10 is false").out
+    }
+
+    print("! (not) test:").out
+    z: 0
+    if (!z) {
+        print("!0 is true").out
+    } else {
+        print("!0 is false").out
+    }
+
+    0
+}
